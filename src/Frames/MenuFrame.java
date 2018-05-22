@@ -1,5 +1,6 @@
 package Frames;
 
+import Objects.FroggerFrame;
 import Objects.FroggerGame;
 import UI.CustomizedButtonUI;
 
@@ -106,12 +107,10 @@ public class MenuFrame extends JFrame implements ActionListener {
         add(background);
     }
 
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == start) {
-            new FroggerGame();
+            new FroggerFrame();
         } else if (e.getSource() == exit) {
             System.exit(0);
         }
