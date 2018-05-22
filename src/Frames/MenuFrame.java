@@ -1,5 +1,6 @@
-package frames;
+package Frames;
 
+import Objects.FroggerGame;
 import UI.CustomizedButtonUI;
 
 import javax.imageio.ImageIO;
@@ -34,7 +35,7 @@ public class MenuFrame extends JFrame implements ActionListener {
          * Set the background but don't draw yet
          */
         try {
-            this.backgroundIMG = ImageIO.read(new File("src/textures/menu_background.png"));
+            this.backgroundIMG = ImageIO.read(new File("src/Textures/menu_background.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -109,6 +110,10 @@ public class MenuFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == start) {
+            new FroggerGame();
+        } else if (e.getSource() == exit) {
+            System.exit(0);
+        }
     }
 }
